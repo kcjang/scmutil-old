@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -259,15 +259,15 @@ public class Converter {
         {
             _tmpRegister = _time.substring(_time.indexOf("T") + 1, _time.indexOf("H"));
             if(!"0".equals(_tmpRegister))
-                _tmp = _tmpRegister + "½Ã ";
+                _tmp = _tmpRegister + "ï¿½ï¿½ ";
             _tmpRegister = _time.substring(_time.indexOf("H") + 1, _time.indexOf("M"));
             if(!"0".equals(_tmpRegister))
-                _tmp = _tmp + _tmpRegister + "ºÐ ";
+                _tmp = _tmp + _tmpRegister + "ï¿½ï¿½ ";
             _tmpRegister = _time.substring(_time.indexOf("M") + 1, _time.indexOf("S"));
             if(!"0".equals(_tmpRegister))
-                _tmp = _tmp + _tmpRegister + "ÃÊ";
+                _tmp = _tmp + _tmpRegister + "ï¿½ï¿½";
             if(_time.equals("PT0H0M0S"))
-                _tmp = "1ÃÊ";
+                _tmp = "1ï¿½ï¿½";
             _return = _tmp;
         } else
         {

@@ -29,13 +29,7 @@ public class HttpsClientWithoutValidation {
 
 	private final String USER_AGENT = "Mozilla/5.0";
 	Logger logger = Logger.getLogger(HttpsClientWithoutValidation.class);
-	/**
-	 * 
-	 * @param urlString
-	 * @throws IOException
-	 * @throws NoSuchAlgorithmException
-	 * @throws KeyManagementException
-	 */
+
 	public byte[] getHttps(String urlString) throws NoSuchAlgorithmException, KeyManagementException, IOException {
 
 		// Get HTTPS URL connection
@@ -158,26 +152,6 @@ public class HttpsClientWithoutValidation {
 		return baos.toByteArray();
 	}
 
-	/**
-	 * 
-	 * @param args
-	 * @throws Exception
-	 */
-	/*
-	public static void main(String[] args) throws Exception {
-		//getPattern();
-		
-		upload();
-
-	}
-	
-	private static void upload() throws KeyManagementException, NoSuchAlgorithmException, IOException {
-		HttpsClientWithoutValidation test = new HttpsClientWithoutValidation();
-		
-		byte[] res = test.postData("https://localhost:8443/scmweb/test/test.do", "1234567890".getBytes());
-		System.out.println(new String(res));
-	}
-	*/
 	
 	private static void getPattern() throws KeyManagementException, NoSuchAlgorithmException, IOException {
 		HttpsClientWithoutValidation test = new HttpsClientWithoutValidation();

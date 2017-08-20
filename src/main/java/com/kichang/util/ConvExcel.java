@@ -18,7 +18,7 @@ public class ConvExcel {
 		List<Method> methods = new ArrayList<Method>();
 		List results = new ArrayList();
 
-		// Get �Լ��� �����Ѵ�.
+
 		for(int i=0; i< vars.length; i++) {
 			methods.add(clas.getMethod(makeGetMethod(vars[i]), (Class[]) null));
 		}

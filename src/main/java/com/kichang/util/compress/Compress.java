@@ -86,50 +86,23 @@ public class Compress {
 		zis.close();
 	}
 	
-	/**
-	 * compresses the given file(or dir) and creates new file under the same directory.
-	 * @param src file or directory
-	 * @throws IOException
-	 */
+
 	public static void zip(File src) throws IOException{
 		zip(src, Charset.defaultCharset().name(), true);
 	}
-	/**
-	 * zips the given file(or dir) and create 
-	 * @param src file or directory to compress
-	 * @param includeSrc if true and src is directory, then src is not included in the compression. if false, src is included.
-	 * @throws IOException
-	 */
+
 	public static void zip(File src, boolean includeSrc) throws IOException{
 		zip(src, Charset.defaultCharset().name(), includeSrc);
 	}
-	/**
-	 * compresses the given src file (or directory) with the given encoding
-	 * @param src
-	 * @param charSetName
-	 * @param includeSrc
-	 * @throws IOException
-	 */
+
 	public static void zip(File src, String charSetName, boolean includeSrc) throws IOException {
 		zip( src, src.getParentFile(), charSetName, includeSrc);
 	}
-	/**
-	 * compresses the given src file(or directory) and writes to the given output stream.
-	 * @param src
-	 * @param os
-	 * @throws IOException
-	 */
+
 	public static void zip(File src, OutputStream os) throws IOException {
 		zip(src, os, Charset.defaultCharset().name(), true);
 	}
-	/**
-	 * compresses the given src file(or directory) and create the compressed file under the given destDir. 
-	 * @param src
-	 * @param destDir
-	 * @param charSetName
-	 * @param includeSrc
-	 * @throws IOException
-	 */
+
 	public static void zip(File src, File destDir, String charSetName, boolean includeSrc) throws IOException {
 		String fileName = src.getName();
 		if ( !src.isDirectory() ){

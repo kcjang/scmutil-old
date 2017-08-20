@@ -50,9 +50,7 @@ public class CharConversion {
     }
 
 
-	/**
-	 * core routine
-	 */
+
 	public static String ascii2native(String str) {
 		String hex = "0123456789ABCDEF" ;
 		StringBuffer buf = new StringBuffer() ;

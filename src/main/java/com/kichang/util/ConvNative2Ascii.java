@@ -2,16 +2,9 @@ package com.kichang.util;
 
 import java.io.* ;
 
-/**
- * Ascii2Native - \\uxxxx convert Native code
- * @version 1.1
- * @Author so-miya@mma.gr.jp
- */
+
 public class ConvNative2Ascii {
-	/**
-	 * TestMain
-	 * @throws IOException 
-	 */
+
 	public static void main(String[] args) throws IOException {
 		String fname = "D:\\WSFinder\\eclipse\\WS-Finder-Server\\src\\Messages.properties_native";
 		String fname2 = "D:\\WSFinder\\eclipse\\WS-Finder-Server\\src\\Messages.properties";

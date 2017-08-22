@@ -4,9 +4,9 @@
 
 	<groupId>com.github.kcjang</groupId>
 	<artifactId>scmutil</artifactId>
-	<version>1.0.2.1</version>
+	<version>1.0.2.2</version>
 	<packaging>jar</packaging>
-	<name>scm utility</name>
+	<name>com.github.kcjang:scmutil</name>
 	<url>https://github.com/kcjang/scmutil</url>
 	<description>Java Utils</description>
 	<properties>
@@ -31,7 +31,11 @@
 			<url>https://api.bintray.com/maven/windykc/utils/scmutil/;publish=1</url>
 		</repository>
 	</distributionManagement>
-
+	<scm>
+	  <connection>scm:git:git://github.com/kcjang/scmutil.git</connection>
+	  <developerConnection>scm:git:ssh://github.com:kcjang/scmutil.git</developerConnection>
+	  <url>http://github.com/kcjang/scmutil</url>
+	</scm>
 
 
 	<build>

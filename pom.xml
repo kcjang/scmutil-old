@@ -4,10 +4,11 @@
 
 	<groupId>com.github.kcjang</groupId>
 	<artifactId>scmutil</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.2.1</version>
 	<packaging>jar</packaging>
 	<name>scm utility</name>
 	<url>https://github.com/kcjang/scmutil</url>
+	<description>Java Utils</description>
 	<properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	</properties>

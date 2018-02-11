@@ -12,9 +12,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 
 public abstract class PrintUtil {
-	static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(PrintUtil.class);
+	static Log logger = LogFactory.getLog(PrintUtil.class);
 	
 	public static void printList(List list) {
 		printSet(list);

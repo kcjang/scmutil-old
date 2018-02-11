@@ -34,7 +34,7 @@ import org.apache.commons.logging.LogFactory;
 
 
 public class FileUtil {
-	static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(FileUtil.class);
+	static Log logger = LogFactory.getLog(FileUtil.class);
 	
 	protected int tw=176;
 	protected int th=144;

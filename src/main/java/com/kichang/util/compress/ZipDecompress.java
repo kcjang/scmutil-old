@@ -11,8 +11,11 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 public class ZipDecompress {
-	org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(ZipDecompress.class);
+	Log logger = LogFactory.getLog(ZipDecompress.class);
 	private File zipFile;
 	private String targetDir = "";
 	public static int CACHESIZ = 1024 * 1024 * 100; // 100 Mega Character

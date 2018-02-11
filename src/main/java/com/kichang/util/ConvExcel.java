@@ -11,8 +11,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 public class ConvExcel {
-	org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(ConvExcel.class);
+	Log logger = LogFactory.getLog(ConvExcel.class);
 	public String convCsv(List list,Class clas,String[] titles, String[] vars ) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchMethodException {
 		StringBuffer csv = new StringBuffer();
 		List<Method> methods = new ArrayList<Method>();

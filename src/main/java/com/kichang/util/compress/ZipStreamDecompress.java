@@ -10,10 +10,13 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipInputStream;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.kichang.util.StringUtil;
 
 public class ZipStreamDecompress {
-	org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(ZipStreamDecompress.class);
+	Log logger = LogFactory.getLog(ZipStreamDecompress.class);
 	private ZipInputStream zin;
 	private String targetDir = "";
 	public static int CACHESIZ = 1024 * 1024 * 100; // 100 Mega Character

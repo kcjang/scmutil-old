@@ -4,7 +4,7 @@
 
 	<groupId>com.github.kcjang</groupId>
 	<artifactId>scmutil</artifactId>
-	<version>1.0.2.2</version>
+	<version>1.0.2.3</version>
 	<packaging>jar</packaging>
 	<name>com.github.kcjang:scmutil</name>
 	<url>https://github.com/kcjang/scmutil</url>

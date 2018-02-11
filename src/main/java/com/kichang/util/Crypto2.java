@@ -8,10 +8,12 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 
 public class Crypto2 {
-	static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(Crypto2.class);
+	static Log logger = LogFactory.getLog(Crypto2.class);
 	public static String hashSha512(String message) {
 		return getHash(message,"SHA-512");
 	}

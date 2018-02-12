@@ -1,6 +1,7 @@
-/target/
-/build/
-/.settings/
 /.classpath
+/.gradle
 /.project
+/.settings/
+/build/
+/target/
 settings.xml

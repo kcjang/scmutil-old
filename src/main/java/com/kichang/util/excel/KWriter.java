@@ -13,9 +13,11 @@ import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
 public interface KWriter {
-	public void create(OutputStream os) throws IOException;
+	public void setWorkbook(String filename) throws IOException;
 	
-	public void close();
+	public void setWorkbook(OutputStream output) throws IOException;
+	
+	public void flush();
 	
 	public void createHead(String[] heads);
 	

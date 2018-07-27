@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 import com.kichang.util.ConvExcel;
 
 import jxl.Workbook;
-import jxl.WorkbookSettings;
 import jxl.biff.FontRecord;
 import jxl.format.Colour;
 import jxl.format.Font;
@@ -27,15 +26,22 @@ public class KExcelWriter implements KWriter {
 
 	WritableWorkbook workbook;
 	WritableSheet sheet;
-
+	
+	String filename = null;
 	String[] heads;
 	
 	int index = 0;
 	
-	public void create(OutputStream os) throws IOException {
-		WorkbookSettings ws = new WorkbookSettings();
-		ws.setUseTemporaryFileDuringWrite(true);
-		workbook = Workbook.createWorkbook(os,ws);
+	public void setWorkbook(String path) throws IOException {
+		this.filename = path + ".xls";
+		workbook = Workbook.createWorkbook(new File(filename));
+		sheet = workbook.createSheet("취약점_" + index, index);
+	}
+	
+
+	@Override
+	public void setWorkbook(OutputStream output) throws IOException {
+		workbook = Workbook.createWorkbook(output);
 		sheet = workbook.createSheet("취약점_" + index, index);
 	}
 	
@@ -48,7 +54,7 @@ public class KExcelWriter implements KWriter {
 		return sheet;
 	}
 	
-	public void close() {
+	public void flush() {
 		try {
 			workbook.write();
 			workbook.close();
@@ -60,8 +66,6 @@ public class KExcelWriter implements KWriter {
 	}
 	
 	public void createHead(String[] heads) {
-		
-		logger.info("Create Head : " + index);
 		this.heads = heads;
 		if (index > 0) {
 			sheet = workbook.createSheet("취약점_" + index, index);
@@ -71,7 +75,7 @@ public class KExcelWriter implements KWriter {
 			for(int i=0; i<heads.length; i++) {
 				Label label = new Label(i,0,heads[i]);
 				WritableCellFormat cf = new WritableCellFormat();
-				cf.setBackground(Colour.DARK_RED2);
+				cf.setBackground(Colour.GRAY_25);
 				Font font = cf.getFont();
 				label.setCellFormat(cf);
 				sheet.addCell(label);
@@ -104,5 +108,11 @@ public class KExcelWriter implements KWriter {
 		//System.out.println("");
 	}
 
+	public String getOutputPath() {
+		
+		return filename;
+	}
 
+
+	
 }

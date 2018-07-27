@@ -1,26 +1,34 @@
 package com.kichang.util.excel;
 
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+
+import jxl.Workbook;
 
 public class KCSVWriter implements KWriter {
-	OutputStream os;
-	Writer writer; 
+	String filename;
+	OutputStream writer; 
 
 	@Override
-	public void create(OutputStream os) throws IOException {
-		this.os = os;
-		writer = new OutputStreamWriter(os);
+	public void setWorkbook(String filename) throws IOException {
+		this.filename = filename + ".csv";
+		writer = new FileOutputStream(filename);
 		
+	}
+	
+
+	@Override
+	public void setWorkbook(OutputStream output) throws IOException {
+		writer = output;
 	}
 
 	@Override
-	public void close() {
+	public void flush() {
 		try {
-			writer.close();
+			writer.flush();
+			//writer.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,12 +51,13 @@ public class KCSVWriter implements KWriter {
 		}
 		buf.append("\n");
 		try {
-			writer.write(buf.toString());
+			writer.write(buf.toString().getBytes());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
+
 	
 }
